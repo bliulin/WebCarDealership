@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebCarDealership;
 
@@ -11,9 +12,10 @@ using WebCarDealership;
 namespace CarDealership.Data.Migrations
 {
     [DbContext(typeof(DealershipDbContext))]
-    partial class DealershipDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220316172008_AddUniqueConstraintToCustomer")]
+    partial class AddUniqueConstraintToCustomer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,9 +42,6 @@ namespace CarDealership.Data.Migrations
                     b.Property<string>("Model")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("UnitPrice")
-                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
@@ -89,9 +88,6 @@ namespace CarDealership.Data.Migrations
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
-
-                    b.Property<decimal>("OrderAmount")
-                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");

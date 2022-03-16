@@ -44,7 +44,8 @@ namespace WebCarDealership.Controllers
                 CarOfferId = model.CarOfferId,
                 CustomerId = model.CustomerId,
                 Date = DateTime.UtcNow,
-                Quantity = model.Quantity
+                Quantity = model.Quantity,
+                OrderAmount = model.Quantity * offer.UnitPrice
             };
             _dbContext.Orders.Add(dbOrder);
 

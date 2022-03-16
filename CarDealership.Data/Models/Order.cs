@@ -18,6 +18,8 @@ namespace CarDealership.Data.Models
 
         public int Quantity { get; set; }
 
+        public decimal OrderAmount { get; set; }
+
         public Customer Customer { get; set; }
 
         public CarOffer CarOffer { get; set; }

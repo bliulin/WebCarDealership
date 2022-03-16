@@ -15,6 +15,15 @@ namespace WebCarDealership
             optionsBuilder.LogTo(Console.Write);
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Customer>()
+                .HasIndex(c => c.Email)
+                .IsUnique();
+        }
+
         public DbSet<CarOffer> CarOffers { get; set; }
 
         public DbSet<Customer> Customers { get; set; }

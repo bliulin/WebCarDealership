@@ -16,6 +16,8 @@ namespace CarDealership.Data.Models
 
         public int AvailableStock { get; set; }
 
+        public decimal UnitPrice { get; set; }
+
         public ICollection<Order> Orders { get; set; }
     }
 }
